@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSync - Registrasi Pasien</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>Daftar Pasien</h1>
+            <div id="alertMsg" class="alert"></div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">Nama Lengkap</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                <label for="password">Password</label>
+                <div style="position: relative;">
+                    <input type="password" id="password" required style="width: 100%;">
+                    <span id="togglePassword" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8;">👁️</span>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary" style="margin-top: 10px;">Daftar Sekarang</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #94a3b8;">
+            Sudah punya akun? <a href="/login.html" style="color: var(--primary-color);">Login di sini</a>
+        </p>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const password = document.getElementById('password');
+            if (password.type === 'password') {
+                password.type = 'text';
+                this.textContent = '🙈';
+            } else {
+                password.type = 'password';
+                this.textContent = '👁️';
+            }
+        });
+    </script>
+</body>
+</html>
