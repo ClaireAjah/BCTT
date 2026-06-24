@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSync - Dashboard Pasien</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <nav class="navbar">
+            <div class="navbar-brand">HealthSync Portal</div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Loading...</span>
+                <button class="btn-logout" id="btnLogout">Logout</button>
+            </div>
+        </nav>
+
+        <div class="dashboard-container">
+            <aside class="sidebar">
+                <div class="card">
+                    <h2 class="card-title">Menu Cepat</h2>
+                    <ul class="list-group">
+                        <li><button class="btn-outline" style="width:100%; text-align:left;" onclick="openModal('appointmentModal')">Buat Janji Temu</button></li>
+                        <li><button class="btn-outline" style="width:100%; text-align:left;" onclick="openModal('vitalsModal')">Catat Vital Sign</button></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Pengumuman Kesehatan</h2>
+                    <ul class="list-group" id="announcementList">
+                        <li class="list-item">Memuat pengumuman...</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <div class="card">
+                    <h2 class="card-title">Grafik Vital Sign</h2>
+                    <div class="chart-container">
+                        <canvas id="vitalsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid-cols-2">
+                    <div class="card">
+                        <h2 class="card-title">Riwayat Janji Temu</h2>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Dokter</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="appointmentTableBody">
+                                    <tr><td colspan="3">Memuat...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Rekam Medis & Resep</h2>
+                        <ul class="list-group" id="recordsList">
+                            <li class="list-item">Memuat rekam medis...</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="appointmentModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('appointmentModal')">&times;</button>
+            <h2 class="card-title" style="margin-bottom: 20px;">Buat Janji Temu</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="doctorSelect">Pilih Dokter</label>
+                    <select id="doctorSelect" required>
+                        <option value="">Memuat dokter...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">Tanggal & Waktu</label>
+                    <input type="datetime-local" id="appointmentDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Keluhan</label>
+                    <textarea id="reason" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Kirim Permintaan</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="vitalsModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('vitalsModal')">&times;</button>
+            <h2 class="card-title" style="margin-bottom: 20px;">Catat Vital Sign Harian</h2>
+            <form id="vitalsForm">
+                <div class="form-group">
+                    <label for="bp">Tekanan Darah (mmHg)</label>
+                    <input type="text" id="bp" placeholder="Contoh: 120/80" required>
+                </div>
+                <div class="form-group">
+                    <label for="hr">Detak Jantung (bpm)</label>
+                    <input type="number" id="hr" required>
+                </div>
+                <div class="form-group">
+                    <label for="sugar">Gula Darah (mg/dL)</label>
+                    <input type="number" id="sugar" required>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Berat Badan (kg)</label>
+                    <input type="number" step="0.1" id="weight" required>
+                </div>
+                <button type="submit" class="btn-primary">Simpan Data</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
