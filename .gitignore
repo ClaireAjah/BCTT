@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+database.db
+generate_git_history.ps1
+src/controllers/incidentController.js
+src/controllers/pollController.js
+src/controllers/sensorController.js
