@@ -32,3 +32,32 @@ Teknologi yang Digunakan:
 
 Note:
 Kode kami dibuat dengan tingkat detail yang tinggi, responsif, logika yang tersambung dari database ke UI, dan 100% bebas dari komentar sesuai dengan instruksi yang diberikan.
+
+---
+DOKUMENTASI API (HealthSync)
+
+1. Autentikasi (Auth)
+   - POST /api/auth/register : Mendaftarkan pengguna baru (Pasien).
+   - POST /api/auth/login    : Autentikasi pengguna (JWT) & set HTTP-only cookie.
+   - POST /api/auth/logout   : Menghapus cookie sesi pengguna.
+   - GET  /api/me            : Mendapatkan profil pengguna yang sedang login.
+
+2. Pengguna (Users)
+   - GET  /api/doctors       : Mendapatkan daftar semua dokter yang terdaftar.
+
+3. Janji Temu (Appointments)
+   - POST /api/appointments      : Membuat janji temu baru (Pasien -> Dokter).
+   - GET  /api/appointments      : Melihat jadwal janji temu (Berdasarkan Role).
+   - PUT  /api/appointments/:id/status : Mengubah status janji (Confirmed/Completed/Cancelled).
+
+4. Rekam Medis (Medical Records)
+   - POST /api/records : Input data rekam medis dan resep (Khusus Dokter).
+   - GET  /api/records : Mendapatkan daftar rekam medis pasien terkait.
+
+5. Vital Signs (Pemantauan Pasien)
+   - POST /api/vitals : Mengirim data vital sign (Gula Darah, Detak Jantung, dll).
+   - GET  /api/vitals : Mengambil riwayat vital sign pasien untuk grafik Chart.js.
+
+6. Pengumuman (Announcements)
+   - POST /api/announcements : Membuat pengumuman kesehatan baru (Khusus Dokter/Admin).
+   - GET  /api/announcements : Mendapatkan semua pengumuman yang aktif.
