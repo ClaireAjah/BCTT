@@ -1,0 +1,34 @@
+NIM | nama | usnGithub | email github | :
+
+241110637 | Bryan Chandra | ClaireAjah | clairechandra1@icloud.com
+241111218 | Stevania | stevaniakosasih | stevania.kosasih5@gmail.com 
+221113477 | James | mes1504 | 221113477@students.mikroskil.ac.id
+241112820 | Jenisa Lauren | Jenisalaurens | jenisalauren05@gmail.com
+
+Project: HealthSync (Smart Health Platform)
+
+Penjelasan Aplikasi:
+HealthSync adalah platform manajemen kesehatan pintar yang dirancang untuk menjembatani komunikasi medis antara Pasien dan Dokter. Dibangun dengan fokus pada kecepatan, keamanan data, dan kemudahan aksesibilitas. Aplikasi ini mengandalkan Supabase (PostgreSQL) sebagai basis datanya yang memungkinkan pengambilan data secara real-time.
+
+Fitur-fitur Utama:
+1. Registrasi & Autentikasi JWT: Keamanan sistem login berbasis token untuk membedakan hak akses Pasien dan Dokter/Admin.
+2. Dashboard Pasien Terintegrasi: 
+   - Pencatatan vital sign (Tekanan Darah, Detak Jantung, Gula Darah, Berat Badan).
+   - Visualisasi grafik pemantauan kesehatan dinamis (menggunakan Chart.js).
+   - Pembuatan dan pengelolaan Janji Temu dengan dokter spesialis.
+   - Akses langsung ke Rekam Medis dan Resep dari dokter.
+3. Portal Manajemen Dokter:
+   - Persetujuan, penyelesaian, dan pembatalan janji temu.
+   - Fitur Input Rekam Medis pasien yang aman dan tersentralisasi.
+   - Telemonitoring (Fitur untuk mencari pasien dengan ID dan memantau grafik riwayat kesehatannya dari jarak jauh).
+   - Pembuatan pengumuman kesehatan dan kampanye vaksinasi.
+
+Teknologi yang Digunakan:
+- Frontend: HTML5, Vanilla CSS3 (Custom Glassmorphism Medical Dark Theme), Vanilla JavaScript (No Framework).
+- Backend: Node.js, Express.js.
+- Database: Supabase (PostgreSQL) & @supabase/supabase-js.
+- Keamanan: JSON Web Token (JWT) dengan cookie HTTP-only.
+- Visualisasi: Chart.js.
+
+Note:
+Kode kami dibuat dengan tingkat detail yang tinggi, responsif, logika yang tersambung dari database ke UI, dan 100% bebas dari komentar sesuai dengan instruksi yang diberikan.
